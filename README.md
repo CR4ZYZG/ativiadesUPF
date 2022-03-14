@@ -9,3 +9,11 @@ Pode-se dizer  que o encapsulamento envelopa dados para ocultar a complexidade d
 A ocultação de dados manipula os dados que foram encapsulados de forma que possa restringir ou permitir o uso dessses dados, esses dados sempre serão privados e inacessiveis por classes e usuários externos
 
 Por exemplo uma classe "Conta" tem um campo "Saldo de (cliente)". O saldo é uma informação sensivel e volatil, um aplicativo externo pode verificar se o saldo é possitivo ou negativo (ex), mas em hipotese alguma pode modificar o saldo.
+
+
+
+# Lei de Demeter (LoD)
+
+Também conhecido como principio do menor conhecimento, essa lei estipula que um objeto deve ter conhecimento apenas de informações e recursos estritamente necessários para seu funcionamento;
+
+Um objeto X pode "chamar" uma instancia do objeto Y, mas não pode solicitar um serviço de Z utilizando o objeto Y como uma ponte. Para a lei ser respeitada, o objeto Y deve ser modificada para que atenda o onjeto X diretamente, ou, X pode ter uma referencia direta à Z e fazer a requisição diretamente para ele.
