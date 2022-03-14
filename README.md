@@ -17,3 +17,16 @@ Por exemplo uma classe "Conta" tem um campo "Saldo de (cliente)". O saldo é uma
 Também conhecido como principio do menor conhecimento, essa lei estipula que um objeto deve ter conhecimento apenas de informações e recursos estritamente necessários para seu funcionamento;
 
 Um objeto X pode "chamar" uma instancia do objeto Y, mas não pode solicitar um serviço de Z utilizando o objeto Y como uma ponte. Para a lei ser respeitada, o objeto Y deve ser modificada para que atenda o onjeto X diretamente, ou, X pode ter uma referencia direta à Z e fazer a requisição diretamente para ele.
+
+Um exemplo de código em que a lei de Demeter é violada é apresentado a seguir:
+
+const data = cliente.ultimoPedido.dadosPedido.dataEmissao
+
+O problema nisso é que em uma modificação da classe ultimoPedido, as propriedades podem não existir mais e assim ocorrerá uma quebra no sistema, um chamado a uma propriedade nula.
+
+Nesse caso o ideal é que seja feito na classe ultimoPedido um getDataEmissao para ser usado em outras classes.
+
+const data = ultimoPedido.getDataEmissao()
+
+
+fonte do exemplo (https://dev.to/ino_gu/lei-de-demeter-4ldf)
