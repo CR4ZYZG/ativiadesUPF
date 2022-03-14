@@ -20,7 +20,7 @@ Um objeto X pode "chamar" uma instancia do objeto Y, mas não pode solicitar um 
 
 Um exemplo de código em que a lei de Demeter é violada é apresentado a seguir:
 
-**const data = cliente.ultimoPedido.dadosPedido.dataEmissao**
+*const data = cliente.ultimoPedido.dadosPedido.dataEmissao*
 
 O problema nisso é que em uma modificação da classe ultimoPedido, as propriedades podem não existir mais e assim ocorrerá uma quebra no sistema, um chamado a uma propriedade nula.
 
